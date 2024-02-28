@@ -11,4 +11,5 @@ public interface IService<E> {
     List<E> findAll();
     Optional<E> findById(Long id);
     List<Cat> findByName(String name);
+    List<Cat> findByBreed(Long id);
 }

@@ -48,4 +48,10 @@ public class CatController {
         List<Cat> cats = catIService.findByName(name);
         return new ResponseEntity<>(cats, HttpStatus.OK);
     }
+
+    @GetMapping("/breed/{id}")
+    public ResponseEntity<List<Cat>> searchByBreed(@PathVariable Long id) {
+        List<Cat> cats = catIService.findByBreed(id);
+        return new ResponseEntity<>(cats, HttpStatus.OK);
+    }
 }

@@ -36,4 +36,9 @@ public class CatService implements IService<Cat> {
     public List<Cat> findByName(String name) {
         return catRepository.findAllByNameContaining(name);
     }
+
+    @Override
+    public List<Cat> findByBreed(Long id) {
+        return catRepository.findAllByBreedContaining(id);
+    }
 }
