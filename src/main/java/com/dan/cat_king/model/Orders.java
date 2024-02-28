@@ -13,4 +13,5 @@ public class Orders {
     private User user;
     private String orderDate;
     private double totalPrice;
+    private int status;
 }

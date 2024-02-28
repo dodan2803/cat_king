@@ -1,4 +1,4 @@
-package com.dan.cat_king.service;
+package com.dan.cat_king.service.IService;
 
 import com.dan.cat_king.model.Cat;
 
