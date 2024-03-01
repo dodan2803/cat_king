@@ -15,36 +15,36 @@ import java.util.List;
 @CrossOrigin("*")
 public class CatController {
     @Autowired
-    private CatService catIService;
+    private CatService catService;
 
     @GetMapping("")
     public ResponseEntity<List<Cat>> getAll() {
-        List<Cat> cats = catIService.findAll();
+        List<Cat> cats = catService.findAll();
         return new ResponseEntity<>(cats, HttpStatus.OK);
     }
 
     @PostMapping("/add")
     public ResponseEntity<String> add(@RequestBody Cat cat) {
-        catIService.save(cat);
+        catService.save(cat);
         return new ResponseEntity<>("Thêm thành công", HttpStatus.OK);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<String> edit(@PathVariable Long id, @RequestBody Cat cat) {
         cat.setId(id);
-        catIService.save(cat);
+        catService.save(cat);
         return new ResponseEntity<>("Sửa thành công", HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> remove(@PathVariable Long id) {
-        catIService.delete(id);
+        catService.delete(id);
         return new ResponseEntity<>("Xóa thành công", HttpStatus.OK);
     }
 
     @GetMapping("/search")
     public ResponseEntity<List<Cat>> searchByName(@RequestParam String name) {
-        List<Cat> cats = catIService.findByName(name);
+        List<Cat> cats = catService.findByName(name);
         return new ResponseEntity<>(cats, HttpStatus.OK);
     }
 }
