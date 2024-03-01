@@ -2,7 +2,6 @@ package com.dan.cat_king.controller;
 
 import com.dan.cat_king.model.Cat;
 import com.dan.cat_king.service.CatService;
-import com.dan.cat_king.service.IService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +15,7 @@ import java.util.List;
 @CrossOrigin("*")
 public class CatController {
     @Autowired
-    private IService<Cat> catIService;
+    private CatService catIService;
 
     @GetMapping("")
     public ResponseEntity<List<Cat>> getAll() {
