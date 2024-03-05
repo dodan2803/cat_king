@@ -7,8 +7,12 @@ import java.util.Optional;
 
 public interface CatService {
     void save(Cat cat);
+
     void delete(Long id);
+
     List<Cat> findAll();
+
     Optional<Cat> findById(Long id);
+
     List<Cat> findByName(String name);
 }
