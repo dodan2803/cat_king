@@ -8,5 +8,4 @@ import java.util.List;
 
 public interface CatRepository extends JpaRepository<Cat, Long> {
     List<Cat> findAllByNameContaining(String name);
-    List<Cat> findAllByBreedContaining(Long id);
 }
