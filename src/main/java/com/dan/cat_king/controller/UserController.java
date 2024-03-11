@@ -42,9 +42,4 @@ public class UserController {
         return new ResponseEntity<>("Xoa thanh cong", HttpStatus.OK);
     }
 
-    @GetMapping("/search")
-    public ResponseEntity<List<User>> search(@RequestParam String name) {
-        List<User> users = userService.findByName(name);
-        return new ResponseEntity<>(users, HttpStatus.OK);
-    }
 }
