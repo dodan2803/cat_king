@@ -18,7 +18,7 @@ public class UserController {
     private UserService userService;
 
     @GetMapping
-    public ResponseEntity<List<User>> getALl() {
+    public ResponseEntity<List<User>> getAll() {
         List<User> users = userService.findALl();
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
@@ -26,20 +26,20 @@ public class UserController {
     @PostMapping("/add")
     public ResponseEntity<String> add(@RequestBody User user) {
         userService.save(user);
-        return new ResponseEntity<>("Them thanh cong", HttpStatus.OK);
+        return new ResponseEntity<>("Thêm thành công", HttpStatus.OK);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<String> edit(@PathVariable Long id, @RequestBody User user) {
         user.setId(id);
         userService.save(user);
-        return new ResponseEntity<>("Sua thanh cong", HttpStatus.OK);
+        return new ResponseEntity<>("Sửa thành công", HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> remove(@PathVariable Long id) {
         userService.delete(id);
-        return new ResponseEntity<>("Xoa thanh cong", HttpStatus.OK);
+        return new ResponseEntity<>("Xóa thành công", HttpStatus.OK);
     }
 
     @GetMapping("/search")
